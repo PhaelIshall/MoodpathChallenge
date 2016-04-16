@@ -15,7 +15,8 @@
 		015B6B111CC18107003C63B7 /* MoodPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B6B101CC18107003C63B7 /* MoodPathTests.swift */; };
 		015B6B1C1CC18107003C63B7 /* MoodPathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B6B1B1CC18107003C63B7 /* MoodPathUITests.swift */; };
 		015B6B2A1CC23387003C63B7 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 015B6B291CC23387003C63B7 /* questions.json */; };
-		015B6B2C1CC24CC2003C63B7 /* FileSaveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B6B2B1CC24CC2003C63B7 /* FileSaveHelper.swift */; };
+		015B6B2E1CC2BC08003C63B7 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015B6B2D1CC2BC08003C63B7 /* Bond.framework */; };
+		8CEC59D932CA417C65D46B81 /* Pods_MoodPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3DFFEE5911D3B9031CB094 /* Pods_MoodPath.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,10 @@
 		015B6B1B1CC18107003C63B7 /* MoodPathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPathUITests.swift; sourceTree = "<group>"; };
 		015B6B1D1CC18107003C63B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		015B6B291CC23387003C63B7 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = questions.json; path = ../questions.json; sourceTree = "<group>"; };
-		015B6B2B1CC24CC2003C63B7 /* FileSaveHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSaveHelper.swift; sourceTree = "<group>"; };
+		015B6B2D1CC2BC08003C63B7 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = "Pods/../build/Debug-iphoneos/Bond.framework"; sourceTree = "<group>"; };
+		7E3DFFEE5911D3B9031CB094 /* Pods_MoodPath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodPath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8CB41EA5C0A685B85BDD5D7 /* Pods-MoodPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodPath.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoodPath/Pods-MoodPath.release.xcconfig"; sourceTree = "<group>"; };
+		EDD10B2E9A2D9E30A79FE32F /* Pods-MoodPath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodPath.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoodPath/Pods-MoodPath.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				015B6B2E1CC2BC08003C63B7 /* Bond.framework in Frameworks */,
+				8CEC59D932CA417C65D46B81 /* Pods_MoodPath.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,11 +87,12 @@
 		015B6AEF1CC18106003C63B7 = {
 			isa = PBXGroup;
 			children = (
-				015B6B2B1CC24CC2003C63B7 /* FileSaveHelper.swift */,
 				015B6AFA1CC18106003C63B7 /* MoodPath */,
 				015B6B0F1CC18107003C63B7 /* MoodPathTests */,
 				015B6B1A1CC18107003C63B7 /* MoodPathUITests */,
 				015B6AF91CC18106003C63B7 /* Products */,
+				3382EF8BA6F0D4B0E4BFAB86 /* Pods */,
+				0E14B79607597BCC0A28E6F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +138,24 @@
 			path = MoodPathUITests;
 			sourceTree = "<group>";
 		};
+		0E14B79607597BCC0A28E6F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				015B6B2D1CC2BC08003C63B7 /* Bond.framework */,
+				7E3DFFEE5911D3B9031CB094 /* Pods_MoodPath.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3382EF8BA6F0D4B0E4BFAB86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDD10B2E9A2D9E30A79FE32F /* Pods-MoodPath.debug.xcconfig */,
+				D8CB41EA5C0A685B85BDD5D7 /* Pods-MoodPath.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 015B6B201CC18107003C63B7 /* Build configuration list for PBXNativeTarget "MoodPath" */;
 			buildPhases = (
+				E2EA7658B7A0BE68D6C7570C /* Check Pods Manifest.lock */,
 				015B6AF41CC18106003C63B7 /* Sources */,
 				015B6AF51CC18106003C63B7 /* Frameworks */,
 				015B6AF61CC18106003C63B7 /* Resources */,
+				EF8515A88C9332A34FE04682 /* Embed Pods Frameworks */,
+				B84DF1E4D9EDBFAF07E71A24 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,13 +286,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B84DF1E4D9EDBFAF07E71A24 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoodPath/Pods-MoodPath-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2EA7658B7A0BE68D6C7570C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EF8515A88C9332A34FE04682 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoodPath/Pods-MoodPath-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		015B6AF41CC18106003C63B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				015B6AFE1CC18106003C63B7 /* ViewController.swift in Sources */,
-				015B6B2C1CC24CC2003C63B7 /* FileSaveHelper.swift in Sources */,
 				015B6AFC1CC18106003C63B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,8 +478,13 @@
 		};
 		015B6B211CC18107003C63B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDD10B2E9A2D9E30A79FE32F /* Pods-MoodPath.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = MoodPath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.MoodPath;
@@ -414,8 +494,13 @@
 		};
 		015B6B221CC18107003C63B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8CB41EA5C0A685B85BDD5D7 /* Pods-MoodPath.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = MoodPath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.MoodPath;
@@ -488,6 +573,7 @@
 				015B6B221CC18107003C63B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		015B6B231CC18107003C63B7 /* Build configuration list for PBXNativeTarget "MoodPathTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +582,7 @@
 				015B6B251CC18107003C63B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		015B6B261CC18107003C63B7 /* Build configuration list for PBXNativeTarget "MoodPathUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +591,7 @@
 				015B6B281CC18107003C63B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
