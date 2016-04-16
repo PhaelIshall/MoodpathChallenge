@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+
+//        if let date: NSDate = NSUserDefaults.standardUserDefaults().valueForKey("timeStamp") as? NSDate{
+//            let currentDate = NSDate()
+//            print(date)
+//            //If currentDate is after the set date
+//            if(currentDate.compare(date) == NSComparisonResult.OrderedDescending){
+//                //reenable button
+//                print("no")
+//            }
+//        }
+        
+        
         return true
     }
 

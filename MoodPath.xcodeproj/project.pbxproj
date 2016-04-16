@@ -14,6 +14,8 @@
 		015B6B061CC18106003C63B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015B6B041CC18106003C63B7 /* LaunchScreen.storyboard */; };
 		015B6B111CC18107003C63B7 /* MoodPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B6B101CC18107003C63B7 /* MoodPathTests.swift */; };
 		015B6B1C1CC18107003C63B7 /* MoodPathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B6B1B1CC18107003C63B7 /* MoodPathUITests.swift */; };
+		015B6B2A1CC23387003C63B7 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 015B6B291CC23387003C63B7 /* questions.json */; };
+		015B6B2C1CC24CC2003C63B7 /* FileSaveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B6B2B1CC24CC2003C63B7 /* FileSaveHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		015B6B171CC18107003C63B7 /* MoodPathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodPathUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		015B6B1B1CC18107003C63B7 /* MoodPathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPathUITests.swift; sourceTree = "<group>"; };
 		015B6B1D1CC18107003C63B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		015B6B291CC23387003C63B7 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = questions.json; path = ../questions.json; sourceTree = "<group>"; };
+		015B6B2B1CC24CC2003C63B7 /* FileSaveHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSaveHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		015B6AEF1CC18106003C63B7 = {
 			isa = PBXGroup;
 			children = (
+				015B6B2B1CC24CC2003C63B7 /* FileSaveHelper.swift */,
 				015B6AFA1CC18106003C63B7 /* MoodPath */,
 				015B6B0F1CC18107003C63B7 /* MoodPathTests */,
 				015B6B1A1CC18107003C63B7 /* MoodPathUITests */,
@@ -103,6 +108,7 @@
 				015B6B021CC18106003C63B7 /* Assets.xcassets */,
 				015B6B041CC18106003C63B7 /* LaunchScreen.storyboard */,
 				015B6B071CC18106003C63B7 /* Info.plist */,
+				015B6B291CC23387003C63B7 /* questions.json */,
 			);
 			path = MoodPath;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				015B6B061CC18106003C63B7 /* LaunchScreen.storyboard in Resources */,
+				015B6B2A1CC23387003C63B7 /* questions.json in Resources */,
 				015B6B031CC18106003C63B7 /* Assets.xcassets in Resources */,
 				015B6B011CC18106003C63B7 /* Main.storyboard in Resources */,
 			);
@@ -257,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				015B6AFE1CC18106003C63B7 /* ViewController.swift in Sources */,
+				015B6B2C1CC24CC2003C63B7 /* FileSaveHelper.swift in Sources */,
 				015B6AFC1CC18106003C63B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
