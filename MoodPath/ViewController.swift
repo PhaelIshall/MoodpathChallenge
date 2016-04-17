@@ -25,64 +25,84 @@ class ViewController: UIViewController {
     @IBOutlet weak var noButton: UIButton!
     var activated = true;
     @IBOutlet weak var yesButton: UIButton!
-    
-    
+
+    //These two arrays could help keep track of which block we are in and the time allocated for it. I did nto finish the implementation for this
+    var active = [false, false, false]
+    var  time = [300, 300, 300]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTimer()
         readFile();
+        
+        //If this application has never been opened before, populate this array to indicate that no questions have been answered
         if(answered.isEmpty){
             for k in 1...questions.count{
                 answered.append(false)
                 if (k % 3 == 0){
-                    blocks.append(false)
+                    blocks.append(false) //populate this array to indicate no block has been answered
                 }
                 
             }
         }
+        
+//        //Fetch the last time it was used, the previous answers and the last stored value of the countdown
         if let date: NSDate = NSUserDefaults.standardUserDefaults().valueForKey("timeStamp") as? NSDate{
             if let  answers = NSUserDefaults.standardUserDefaults().valueForKey("answered") as? [Bool]{
                 if let  secs = NSUserDefaults.standardUserDefaults().valueForKey("seconds") as? Int{
             //If there are already stored answers before
-                    answered = answers;
+                    answered = answers; //copy
+                    
+                    //Fill the array of answers and of block according to the previous answers
                     for index in 0...answered.count-1{
                         if answered[index] == true{
-                            print(answers)
                             i = index + 1
                         }
                     }
+                    
+                    if (i >= questions.count){
+                             i = questions.count - 1
+                    }
                     for blockIndex in 0...(answered.count-1)/3{
                         if(answered[blockIndex+2] == false){
-                           
+                           blocks[blockIndex] = false
+                        }
+                        else{
+                            blocks[blockIndex] = true
                         }
                     }
                     
+                  
             //If currentDate is after the set date
-                    print("date: \(date)" +  "and current date:" + "\(NSDate())")
-                    print("Seconds: \(secs)");
+      
                     seconds = secs  + Int((date.timeIntervalSinceNow))
-                    print("Seconds 2: \(seconds)");
+                    time[(i+1)%3] = seconds
                     if (seconds <= 0){
                         if (i < questions.count){
                             i = getNextBlock()
                             seconds = 300
                         }
                     }
-                    print (i)
                     
-                    if (true){
+                
+                    
+                    if (active[(i+1) % 3] == false || i == 0){
+                        active[(i+1) % 3] = true;
+                    }
+                    
+                    
+                    if (answered[i] == false && (i) % 3 == 0 && seconds > 0){
+                        print (i)
                         activated = false;
                         questionImage.image = UIImage(named: "icon");
                         questionLabel.text = "";
                         yesButton.removeFromSuperview()
                         noButton.removeFromSuperview()
-                        
                     }
+                    
                 }
             }
         }
-         print("\(i) is \(activated)")
         initQuestions()
  }
     
@@ -94,9 +114,6 @@ class ViewController: UIViewController {
             questionLabel.text = q.question;
             questionImage.image = q.image;
             i++
-        }
-        else{
-            i = 0
         }
     }
     
@@ -175,7 +192,11 @@ class ViewController: UIViewController {
                 }
             }
         }
+        print ("BLOCKS \(blocks))")
         print("\(i) : \(answered)")
+        print(answered)
+        print(time)
+        print(active)
     }
    
     
@@ -194,8 +215,10 @@ class ViewController: UIViewController {
         let min = seconds / 60
         timerLabel.text = "Ready in : \(min) and \(sec)"
         if(seconds == 0)  {
+            seconds = 300
             timer.invalidate()
             activated = true;
+            yesButton.frame = CGRectMake(400, 400, 160.0, 40.0);
             self.view.addSubview(yesButton)
             //self.view.addSubview(noButton)
             print("NextBlock: : \(getNextBlock())")
@@ -205,7 +228,7 @@ class ViewController: UIViewController {
     }
 
    
-   
+
     
     
     /*The first try/catch part of this method is essentially moving the file from the current directory to the Documnets directory
