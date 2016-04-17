@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     var activated = true;
     @IBOutlet weak var yesButton: UIButton!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTimer()
@@ -69,7 +71,7 @@ class ViewController: UIViewController {
                     }
                     print (i)
                     
-                    if ((i+1) % 3 == 0){
+                    if (true){
                         activated = false;
                         questionImage.image = UIImage(named: "icon");
                         questionLabel.text = "";
@@ -87,10 +89,15 @@ class ViewController: UIViewController {
     
     //This fuction simply fetches the current question and outputs it for the user
     func initQuestions(){
-        let q = questions[i]
-        questionLabel.text = q.question;
-        questionImage.image = q.image;
-        i++
+        if (questions.count > i){
+            let q = questions[i]
+            questionLabel.text = q.question;
+            questionImage.image = q.image;
+            i++
+        }
+        else{
+            i = 0
+        }
     }
     
     /*This function getNextBlock() gives back the next Mandatory block 
@@ -190,7 +197,7 @@ class ViewController: UIViewController {
             timer.invalidate()
             activated = true;
             self.view.addSubview(yesButton)
-            self.view.addSubview(noButton)
+            //self.view.addSubview(noButton)
             print("NextBlock: : \(getNextBlock())")
         }
         NSUserDefaults.standardUserDefaults().setValue(seconds, forKey: "seconds")
