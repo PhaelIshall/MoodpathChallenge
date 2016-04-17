@@ -14,7 +14,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timer: UILabel! 
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer.text = "Timer"
+        
         setupTimer()
 
         // Do any additional setup after loading the view.
@@ -31,6 +31,9 @@ class TimerViewController: UIViewController {
     
     var seconds = 0;
     func subtractTime() {
+        
+        NSUserDefaults.standardUserDefaults().setValue(seconds, forKey: "seconds")
+        
         if(seconds <= 0)  {
             timeLeft.invalidate()
             self.dismissViewControllerAnimated(false, completion: nil)
@@ -38,7 +41,8 @@ class TimerViewController: UIViewController {
         seconds--
         let sec = seconds%60;
         let min = seconds / 60
-        timer.text = "Time: \(min): \(sec)"
+        timer.text = "Unlocked in: \(min) minutes and \(sec) seconds"
+        
         
     }
     override func didReceiveMemoryWarning() {

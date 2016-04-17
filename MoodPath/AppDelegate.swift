@@ -15,13 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         
-        
+        if let  secs = NSUserDefaults.standardUserDefaults().valueForKey("seconds") as? Int{
+            if (secs >= 0) {
                 
-        
-        
+                }
+        }
+
+        // Override point for customization after application launch.
        
+//        
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = mainStoryboard.instantiateViewControllerWithIdentifier("root") as UIViewController
+//        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("timer") as! TimerViewController
+//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        self.window?.rootViewController = viewController;
+//        self.window?.makeKeyAndVisible()
+//        self.window?.rootViewController?.presentViewController(vc, animated: false, completion: nil)
+//       
         
         
         return true

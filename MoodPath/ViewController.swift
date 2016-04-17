@@ -22,7 +22,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     var questions = [Question]()
    
-    
+    @IBOutlet weak var noButton: UIButton!
+    var activated = true;
+    @IBOutlet weak var yesButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,31 +41,46 @@ class ViewController: UIViewController {
         }
         if let date: NSDate = NSUserDefaults.standardUserDefaults().valueForKey("timeStamp") as? NSDate{
             if let  answers = NSUserDefaults.standardUserDefaults().valueForKey("answered") as? [Bool]{
+                if let  secs = NSUserDefaults.standardUserDefaults().valueForKey("seconds") as? Int{
             //If there are already stored answers before
-                answered = answers;
-                for index in 0...answered.count-1{
-                    if answered[index] == true{
-                        print(answers)
-                        i = index
+                    answered = answers;
+                    for index in 0...answered.count-1{
+                        if answered[index] == true{
+                            print(answers)
+                            i = index + 1
+                        }
                     }
-                }
-                for blockIndex in 0...(answered.count-1)/3{
-                    if(answered[blockIndex+2] == false){
-                        print("shit")
+                    for blockIndex in 0...(answered.count-1)/3{
+                        if(answered[blockIndex+2] == false){
+                            print("shit")
+                        }
                     }
-                }
-            }
-                
+                    
             //If currentDate is after the set date
-            print("date: \(date)" +  "and current date:" + "\(NSDate())")
-            seconds = seconds - Int((-date.timeIntervalSinceNow))
-            if (seconds <= 0){
-                if (i != questions.count){
-                    i = getNextBlock()
-                    seconds = 300
+                    print("date: \(date)" +  "and current date:" + "\(NSDate())")
+                    print("Seconds: \(secs)");
+                    seconds = secs  + Int((date.timeIntervalSinceNow))
+                    print("Seconds 2: \(seconds)");
+                    if (seconds <= 0){
+                        if (i < questions.count){
+                            i = getNextBlock()
+                            seconds = 300
+                        }
+                    }
+                    print (i)
+                    
+                    if ((i+1) % 3 == 0){
+                        activated = false;
+                        questionImage.image = UIImage(named: "icon");
+                        questionLabel.text = "";
+                        yesButton.removeFromSuperview()
+                        noButton.removeFromSuperview()
+                        
+                    }
                 }
             }
         }
+         print("\(i) is \(activated)")
         initQuestions()
  }
     
@@ -74,7 +91,6 @@ class ViewController: UIViewController {
         questionLabel.text = q.question;
         questionImage.image = q.image;
         i++
-        saver()
     }
     
     /*This function getNextBlock() gives back the next Mandatory block 
@@ -130,7 +146,7 @@ class ViewController: UIViewController {
             give it the number of seconds left and reset the seconds in this ViewController, then save the currentTime
     */
     @IBAction func answer(sender: AnyObject) {
-        print(i)
+        print("\(i-1) is \(activated)")
         updateAnswered(i-1)
         print(answered)
         if (i<questions.count){
@@ -146,9 +162,9 @@ class ViewController: UIViewController {
                     //In order to move to the next block
                     let vc = self.storyboard?.instantiateViewControllerWithIdentifier("timer") as! TimerViewController
                     self.presentViewController(vc, animated: true, completion: nil)
+                    activated = false;
                     vc.seconds = seconds;
                     seconds = 300
-                    saver()
                 }
             }
         }
@@ -169,11 +185,16 @@ class ViewController: UIViewController {
         seconds--
         let sec = seconds%60;
         let min = seconds / 60
-        timerLabel.text = "Time: \(min): \(sec)"
+        timerLabel.text = "Ready in : \(min) and \(sec)"
         if(seconds == 0)  {
             timer.invalidate()
+            activated = true;
+            self.view.addSubview(yesButton)
+            self.view.addSubview(noButton)
             print("NextBlock: : \(getNextBlock())")
         }
+        NSUserDefaults.standardUserDefaults().setValue(seconds, forKey: "seconds")
+        saver()
     }
 
    

@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="aKv-Po-ZaK">
             <objects>
-                <viewController id="oNT-T5-nUl" customClass="ViewController" customModule="Moodpath" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="root" id="oNT-T5-nUl" customClass="ViewController" customModule="Moodpath" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZAE-jp-uex"/>
                         <viewControllerLayoutGuide type="bottom" id="Fwn-eV-vHQ"/>
@@ -49,16 +49,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qC-Mw-zg7">
-                                <rect key="frame" x="438" y="247" width="90" height="95"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="9da-G5-GHk"/>
-                                </constraints>
-                                <state key="normal" title="Answer" image="noButton"/>
-                                <connections>
-                                    <action selector="answerNo:" destination="oNT-T5-nUl" eventType="touchUpInside" id="lDs-Ik-eSm"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfT-T8-hBT">
                                 <rect key="frame" x="54" y="7" width="170" height="46"/>
                                 <constraints>
@@ -69,6 +59,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qC-Mw-zg7">
+                                <rect key="frame" x="439" y="247" width="90" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="9da-G5-GHk"/>
+                                </constraints>
+                                <state key="normal" title="Answer" image="noButton"/>
+                                <connections>
+                                    <action selector="answer:" destination="oNT-T5-nUl" eventType="touchUpInside" id="NwO-47-wJV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -89,9 +89,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noButton" destination="9qC-Mw-zg7" id="HbA-GF-JUv"/>
                         <outlet property="questionImage" destination="6gO-bj-mT4" id="VUS-hr-1kL"/>
                         <outlet property="questionLabel" destination="25G-Dj-3P5" id="mHH-yp-FBJ"/>
                         <outlet property="timerLabel" destination="WfT-T8-hBT" id="njj-MW-MkF"/>
+                        <outlet property="yesButton" destination="YAQ-NO-9ET" id="fCw-Gv-oFd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuY-8H-8Rj" sceneMemberID="firstResponder"/>
@@ -110,33 +112,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mE-le-zfK">
-                                <rect key="frame" x="215" y="264" width="170" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="K5L-wx-Bad"/>
-                                    <constraint firstAttribute="height" constant="46" id="XA6-Ss-3Pd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait until the next block of questions is unlocked!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoG-cg-Ww8">
+                                <rect key="frame" x="20" y="88" width="560" height="66"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait until the next block of questions is unlocked!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoG-cg-Ww8">
-                                <rect key="frame" x="20" y="88" width="560" height="66"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mE-le-zfK">
+                                <rect key="frame" x="20" y="244" width="560" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="qin-Gp-5Ag"/>
+                                    <constraint firstAttribute="height" constant="48" id="OEf-O8-aMR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SoG-cg-Ww8" firstAttribute="centerX" secondItem="8mE-le-zfK" secondAttribute="centerX" id="90u-lh-hYb"/>
-                            <constraint firstItem="SoG-cg-Ww8" firstAttribute="leading" secondItem="ZtO-7J-QfN" secondAttribute="leadingMargin" id="BE2-2J-ua2"/>
-                            <constraint firstItem="SoG-cg-Ww8" firstAttribute="trailing" secondItem="ZtO-7J-QfN" secondAttribute="trailingMargin" id="ZbT-2f-yWg"/>
-                            <constraint firstItem="a3e-Ku-om3" firstAttribute="top" secondItem="8mE-le-zfK" secondAttribute="bottom" constant="290" id="b4d-NI-bEf"/>
-                            <constraint firstItem="SoG-cg-Ww8" firstAttribute="top" secondItem="1mP-IN-3Ic" secondAttribute="bottom" constant="68" id="ql7-Ve-6u9"/>
+                            <constraint firstItem="SoG-cg-Ww8" firstAttribute="trailing" secondItem="8mE-le-zfK" secondAttribute="trailing" id="Hk2-LB-jWj"/>
+                            <constraint firstItem="SoG-cg-Ww8" firstAttribute="trailing" secondItem="ZtO-7J-QfN" secondAttribute="trailingMargin" id="LFA-IG-krE"/>
+                            <constraint firstItem="SoG-cg-Ww8" firstAttribute="top" secondItem="1mP-IN-3Ic" secondAttribute="bottom" constant="68" id="Uxr-rG-YO0"/>
+                            <constraint firstItem="SoG-cg-Ww8" firstAttribute="leading" secondItem="8mE-le-zfK" secondAttribute="leading" id="azb-EQ-mgp"/>
+                            <constraint firstItem="a3e-Ku-om3" firstAttribute="top" secondItem="8mE-le-zfK" secondAttribute="bottom" constant="308" id="gXr-bb-2qd"/>
+                            <constraint firstItem="SoG-cg-Ww8" firstAttribute="leading" secondItem="ZtO-7J-QfN" secondAttribute="leadingMargin" id="wFZ-jw-myl"/>
+                            <constraint firstItem="8mE-le-zfK" firstAttribute="top" secondItem="SoG-cg-Ww8" secondAttribute="bottom" constant="90" id="z4Y-aw-0NJ"/>
                         </constraints>
                     </view>
                     <connections>
