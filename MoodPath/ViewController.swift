@@ -54,7 +54,7 @@ class ViewController: UIViewController {
                     }
                     for blockIndex in 0...(answered.count-1)/3{
                         if(answered[blockIndex+2] == false){
-                            print("shit")
+                           
                         }
                     }
                     
