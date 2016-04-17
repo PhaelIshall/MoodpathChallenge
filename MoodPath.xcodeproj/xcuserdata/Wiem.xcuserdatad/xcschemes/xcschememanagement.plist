@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MoodPath.xcscheme</key>
+		<key>Moodpath.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>015B6AF71CC18106003C63B7</key>
+		<key>0150067A1CC2BF5900FBDBBF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>015B6B0B1CC18107003C63B7</key>
+		<key>0150068E1CC2BF5900FBDBBF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>015B6B161CC18107003C63B7</key>
+		<key>015006991CC2BF5900FBDBBF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

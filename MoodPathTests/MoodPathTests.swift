@@ -1,15 +1,15 @@
 //
-//  MoodPathTests.swift
-//  MoodPathTests
+//  MoodpathTests.swift
+//  MoodpathTests
 //
-//  Created by Wiem Ben Rim on 4/15/16.
+//  Created by Wiem Ben Rim on 4/16/16.
 //  Copyright © 2016 Wiem Ben Rim. All rights reserved.
 //
 
 import XCTest
-@testable import MoodPath
+@testable import Moodpath
 
-class MoodPathTests: XCTestCase {
+class MoodpathTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

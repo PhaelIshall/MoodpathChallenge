@@ -15,10 +15,10 @@
             hideIssues = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "015B6AF71CC18106003C63B7"
-               BuildableName = "MoodPath.app"
-               BlueprintName = "MoodPath"
-               ReferencedContainer = "container:MoodPath.xcodeproj">
+               BlueprintIdentifier = "0150067A1CC2BF5900FBDBBF"
+               BuildableName = "Moodpath.app"
+               BlueprintName = "Moodpath"
+               ReferencedContainer = "container:Moodpath.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,30 +33,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "015B6B0B1CC18107003C63B7"
-               BuildableName = "MoodPathTests.xctest"
-               BlueprintName = "MoodPathTests"
-               ReferencedContainer = "container:MoodPath.xcodeproj">
+               BlueprintIdentifier = "0150068E1CC2BF5900FBDBBF"
+               BuildableName = "MoodpathTests.xctest"
+               BlueprintName = "MoodpathTests"
+               ReferencedContainer = "container:Moodpath.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "015B6B161CC18107003C63B7"
-               BuildableName = "MoodPathUITests.xctest"
-               BlueprintName = "MoodPathUITests"
-               ReferencedContainer = "container:MoodPath.xcodeproj">
+               BlueprintIdentifier = "015006991CC2BF5900FBDBBF"
+               BuildableName = "MoodpathUITests.xctest"
+               BlueprintName = "MoodpathUITests"
+               ReferencedContainer = "container:Moodpath.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "015B6AF71CC18106003C63B7"
-            BuildableName = "MoodPath.app"
-            BlueprintName = "MoodPath"
-            ReferencedContainer = "container:MoodPath.xcodeproj">
+            BlueprintIdentifier = "0150067A1CC2BF5900FBDBBF"
+            BuildableName = "Moodpath.app"
+            BlueprintName = "Moodpath"
+            ReferencedContainer = "container:Moodpath.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "015B6AF71CC18106003C63B7"
-            BuildableName = "MoodPath.app"
-            BlueprintName = "MoodPath"
-            ReferencedContainer = "container:MoodPath.xcodeproj">
+            BlueprintIdentifier = "0150067A1CC2BF5900FBDBBF"
+            BuildableName = "Moodpath.app"
+            BlueprintName = "Moodpath"
+            ReferencedContainer = "container:Moodpath.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "015B6AF71CC18106003C63B7"
-            BuildableName = "MoodPath.app"
-            BlueprintName = "MoodPath"
-            ReferencedContainer = "container:MoodPath.xcodeproj">
+            BlueprintIdentifier = "0150067A1CC2BF5900FBDBBF"
+            BuildableName = "Moodpath.app"
+            BlueprintName = "Moodpath"
+            ReferencedContainer = "container:Moodpath.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
